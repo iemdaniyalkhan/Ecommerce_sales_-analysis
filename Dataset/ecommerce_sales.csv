@@ -1,0 +1,33 @@
+-- Step 1; Create database
+CREATE DATABASE ecommerce_sales;
+USE ecommerce_sales;
+
+-- Step 2: Create the table
+CREATE TABLE ecommerce_orders (
+    order_id INT PRIMARY KEY AUTO_INCREMENT,
+    customer_id VARCHAR(10),
+    product_id VARCHAR(10),
+    product_name VARCHAR(100),
+    order_date DATE,
+    quantity INT,
+    price_per_unit DECIMAL(10,2),
+    total_price DECIMAL(10,2),
+    status VARCHAR(50)
+);
+
+-- Step 3: Insert the data
+
+INSERT INTO ecommerce_orders (order_id, customer_id, product_id, product_name, order_date, quantity, price_per_unit, total_price, status)
+VALUES 
+(1, 'CUST003', 'P002', 'Smartphone', '2024-01-11', 2, 300.00, 600.00, 'Shipped'),
+(2, 'CUST002', 'P001', 'Laptop', '2024-01-22', 2, 700.00, 1400.00, 'Ordered'),
+(3, 'CUST004', 'P003', 'Headphones', '2024-03-31', 2, 50.00, 100.00, 'Delivered'),
+(4, 'CUST005', 'P002', 'Smartphone', '2024-02-09', 1, 300.00, 300.00, 'Delivered'),
+(5, 'CUST007', 'P001', 'Laptop', '2024-01-19', 2, 700.00, 1400.00, 'Delivered'),
+(6, 'CUST006', 'P004', 'Tablet', '2024-02-01', 1, 250.00, 250.00, 'Shipped'),
+(7, 'CUST001', 'P005', 'Smartwatch', '2024-03-10', 3, 150.00, 450.00, 'Delivered'),
+(8, 'CUST003', 'P002', 'Smartphone', '2024-03-15', 1, 300.00, 300.00, 'Cancelled'),
+(9, 'CUST008', 'P006', 'Camera', '2024-03-20', 1, 500.00, 500.00, 'Ordered'),
+(10, 'CUST002', 'P003', 'Headphones', '2024-04-01', 2, 50.00, 100.00, 'Delivered');
+
+SELECT * FROM ecommerce_orders;
